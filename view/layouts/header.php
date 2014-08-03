@@ -8,6 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="<?php echo COMPONENTS_PATH; ?>/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo PUBLIC_PATH; ?>/css/global.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,4 +17,5 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
+  <body>
 
