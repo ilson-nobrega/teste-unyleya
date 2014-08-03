@@ -19,11 +19,11 @@ class Utils{
             return false;
         }
         
-        if(file_exists('view/application/'.$page.'.php')){
+        if(file_exists(VIEW_PATH.'/'.$page.'.php')){
             
             return array(
                     true,
-                    require 'view/application/'.$page.'.php'
+                    require VIEW_PATH.'/'.$page.'.php'
             );
             
         }else{

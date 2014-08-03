@@ -3,7 +3,7 @@
     require 'includes.php';
     $includes = new importaIncludes();
     
-    //Chama um novo objeto
+    //Chama um novo objeto Utils
     $utils = new Utils();
     
     if(isset($_GET['page'])){
