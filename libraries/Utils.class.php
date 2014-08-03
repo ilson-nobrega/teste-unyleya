@@ -7,5 +7,15 @@
 
 class Utils{
     
-    //Aqui começa o código
+
+    public static function getSection($page){
+        
+        if(!isset($page) || empty($page) || $page == null){
+            
+            return false;
+        }else{
+            
+            
+        }
+    }
 }
