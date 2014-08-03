@@ -1,0 +1,26 @@
+{
+  "name": "teste-unyleya",
+  "version": "1.0",
+  "homepage": "https://github.com/inobrega/teste-unyleya",
+  "directory": "public/components",
+  "authors": [
+    "Ilson Nobrega <ilson@inobrega.com.br>"
+  ],
+  "description": "Teste de aptidao para vaga",
+  "main": "index.php",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
