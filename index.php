@@ -3,6 +3,8 @@
     require 'includes.php';
     $includes = new importaIncludes();
     
+    $dao = new daoFactory();
+    
     //Chama um novo objeto Utils
     $utils = new Utils();
     
