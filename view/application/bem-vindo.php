@@ -24,17 +24,20 @@
         <p class="lead">Utilize o menu acima para navegar pelo sistema.</p>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
           <h2>Mais comodidade</h2>
           <p>O SIGET foi desenvolvido para facilitar cada vez mais suas rotinas administrativas. Tudo com apenas um clique.</p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-6">
           <h2>Suporte de qualidade</h2>
           <p>Contamos com uma equipe especializada, prontamente apta a auxiliá-lo quando precisar. É o SIGET buscando otimizar seu trabalho. </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
           <h2>Bugs corrigidos diariamente</h2>
           <p>Nossa equipe de manutenção trabalha exaustivamente em busca de bugs para corrigi-los. </p>
         </div>
+    </div>
+    <div class="footer">
+        <p>&copy; Ilson Nóbrega - 2014</p>
     </div>
 </section>
