@@ -24,7 +24,21 @@
         <p class="lead">Utilize o menu acima para navegar pelo sistema.</p>
     </div>
     <div class="row">
-        b
+        <form role="form" action="" method="post">
+          <div class="form-group">
+            <label for="descricaoTarefa">Descrição da Tarefa</label>
+            <input type="text" name="descricao" class="form-control" id="descricaoTarefa" placeholder="Descrição da tarefa">
+          </div>
+          <div class="form-group">
+            <label for="statusTarefa">Status da Tarefa</label>
+            <select name="status" class="form-control">
+              <option>Selecione um status...</option>
+              <option>A Fazer</option>
+              <option>Concluída</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
     </div>
     <div class="footer">
         <p>&copy; Ilson Nóbrega - 2014</p>
