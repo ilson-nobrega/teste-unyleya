@@ -24,3 +24,4 @@
     
     //Configuração do Sistema
     define('NAME', 'SIGET - Sistema Gerenciador de Tarefas');
+?>

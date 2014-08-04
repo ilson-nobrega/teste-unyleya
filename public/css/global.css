@@ -1,8 +1,29 @@
-<!-- Estilos da Tela de Login -->
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #eee;
+}
+
+.topo{
+	background: #D53D3D;
+	color: #fff;
+}
+.navbar-default{
+    background: #D53D3D !important;
+    border-color: #fff !important;
+}
+nav a{
+    color: #fff !important;
+}
+nav .active a{
+    background-color: #FF5A5A !important;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    background-color: #fff !important;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+    background-color: #FF5A5A !important;
 }
 
 .form-signin {
@@ -45,3 +66,10 @@ body {
   margin-top: 40px;
   border-top: 1px solid #eee;
 }
+
+
+.topo-bem-vindo{
+    background-color: #fff !important;	
+}
+
+

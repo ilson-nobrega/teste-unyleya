@@ -1,7 +1,7 @@
-<div class="jumbotron">
+<div class="jumbotron topo">
   <div class="container">
     <h2>Bem vindo ao SIGET!</h2>
-    <p>Entre com seus dados de acesso abaixo para entrar no sistema.</p>
+    <p>Digite seus dados de acesso abaixo para acessar o sistema.</p>
   </div>
 </div>
 <div class="container">
