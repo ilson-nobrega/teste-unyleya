@@ -11,6 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="<?php echo COMPONENTS_PATH; ?>/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo COMPONENTS_PATH; ?>/fontawesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo PUBLIC_PATH; ?>/css/global.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

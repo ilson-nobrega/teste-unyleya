@@ -18,7 +18,7 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="<?php echo PROJECT_URL; ?>/bem-vindo/">Home</a></li>
+        <li class="active"><a href="<?php echo PROJECT_URL; ?>/bem-vindo/"><i class="fa fa-home"></i> Home</a></li>
         <li><a href="<?php echo PROJECT_URL; ?>/listagem-de-tarefas/">Listagem de Tarefas</a></li>
         <li><a href="<?php echo PROJECT_URL; ?>/incluir-nova-tarefa/">Incluir Nova Tarefa</a></li>
         <li><a href="<?php echo PROJECT_URL; ?>/index/sair">Sair</a></li>
