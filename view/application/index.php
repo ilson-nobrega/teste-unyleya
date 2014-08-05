@@ -1,5 +1,7 @@
 <?php 
     if(isset($_POST['enviar'])){
+
+        $utils = new Utils();
         
         $email = $_POST['email'];
         $senha = $_POST['senha'];
@@ -13,11 +15,12 @@
             $_SESSION['usuario']['nome'] = $db['nome'];
             $_SESSION['usuario']['email'] = $db['email'];
             
-            echo '<script>location.href="'.PROJECT_URL.'/bem-vindo/";</script>';
-        
+            $utils->sendRedirect(PROJECT_URL.'/bem-vindo/');
+            
         }else{
             
-            echo '<script>alert("Erro ao autenticar usuário!");</script>';
+            $utils->alert("Erro ao autenticar usuario!");
+            $utils->sendRedirect(PROJECT_URL.'/index/');
         }
     }
     
@@ -25,7 +28,7 @@
         
         unset($_SESSION['usuario']);
         session_destroy();
-        echo '<script>location.href="'.PROJECT_URL.'/index/";</script>';
+        $utils->sendRedirect(PROJECT_URL.'/index/');
     }
 ?>
 <div class="jumbotron topo">

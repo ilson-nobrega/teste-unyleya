@@ -42,13 +42,53 @@ class Utils{
      * @param string $destino
      * @return boolean
      */
-    public function sendRedirect($destino){
+    public function sendRedirect($url, $parametros = null){
         
-        if(!isset($destino) || empty($destino) || $destino == null){
-            
-            return false;
-        }
-        
-        echo "<script>location.href='$destino';</script>";
+        if($parametros != null){
+    			
+    		$busca = ',';
+    		$substitui = "&";
+    		
+    		//Função que substitui as vírgulas por &
+    		$parametros = str_replace($busca, $substitui, $parametros);
+    		
+    		echo '<script language="javascript">
+    				   location.href="'.$url.'?'.$parametros.'"
+    		      </script>';
+    	}else{
+    		
+    		echo '<script language="javascript">
+    				   location.href="'.$url.'"
+    		      </script>';
+    	}
     }
+    
+    public function alert($mensagem){
+    
+        echo '<script>
+				  alert("'.$mensagem.'");
+			  </script>';
+    }
+    
+    public function validaEmail($email){
+    
+        //Pega o domÃ­nio inserido pelo usuÃ¡rio
+        $dominio = explode('@', $email);
+    
+        if(!ereg('^([a-zA-Z0-9.-])*([@])([a-z0-9]).([a-z]{2,3})', $email)){
+            	
+            return false;
+            	
+            //Verificar se o domínio inserido pelo usuário existe
+        }else if(!checkdnsrr($dominio[1],'A')){
+            	
+            return false;
+            	
+        }else{
+            	
+            return true;
+        }
+    }
+    
+    
 }

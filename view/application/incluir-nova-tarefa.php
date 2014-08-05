@@ -1,7 +1,8 @@
 <?php 
     if(!isset($_SESSION['usuario'])){
-        echo '<script>alert("Você deve efetuar login no sistema primeiro.");</script>';
-        echo '<script>location.href="'.PROJECT_URL.'/index/";</script>';
+        $utils = new Utils();
+        $utils->alert("Você deve efetuar login no sistema primeiro.");
+        $utils->sendRedirect(PROJECT_URL.'/index/');
     }
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
