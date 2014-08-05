@@ -43,18 +43,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>#0001</td>
-                  <td>Lorem</td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                </tr>
-                <tr>
-                  <td>#0002</td>
-                  <td>amet</td>
-                  <td>consectetur</td>
-                  <td>adipiscing</td>
-                </tr>
+              <?php 
+                    require 'controller/tarefaController.php';
+                    $tarefaController = new tarefaController();
+                    $db = $tarefaController->listarTarefasCadastradas();
+                    
+                    while ($resultado = $db->fetch(PDO::FETCH_ASSOC)){
+              ?>
+                        <tr>
+                          <td>#00<?php echo $resultado['id']; ?></td>
+                          <td><?php echo $resultado['descricao']; ?></td>
+                          <td><?php echo ($resultado['status'] == 'pendente') ? "<b style='color: red;'>Pendente</b>" : "<b style='color: green;'>Concluído</b>"; ?>
+                          </td>
+                          <td>dolor</td>
+                        </tr>
+               <?php
+                    }
+               ?>
                </tbody>
             </table>
            </div>
