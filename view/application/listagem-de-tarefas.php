@@ -55,7 +55,11 @@
                           <td><?php echo $resultado['descricao']; ?></td>
                           <td><?php echo ($resultado['status'] == 'pendente') ? "<b style='color: red;'>Pendente</b>" : "<b style='color: green;'>Concluído</b>"; ?>
                           </td>
-                          <td>dolor</td>
+                          <td>
+                            <a href="<?php echo PROJECT_URL; ?>/excluir-tarefa/<?php echo $resultado['id'];?>"><i class="fa fa-trash-o fa-lg"></i> Excluir</a>
+                            |
+                            <a href="<?php echo PROJECT_URL; ?>/editar-tarefa/<?php echo $resultado['id'];?>"><i class="fa fa-edit fa-lg"></i> Editar</a>
+                          </td>
                         </tr>
                <?php
                     }

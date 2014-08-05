@@ -1,6 +1,16 @@
 body {
   padding-top: 40px;
   padding-bottom: 40px;
+  text-decoration: none;
+}
+
+body a{
+	color: black;
+}
+
+body a:HOVER{
+	color: black;
+	text-decoration: underline;
 }
 
 .topo{
@@ -71,5 +81,3 @@ nav .active a{
 .topo-bem-vindo{
     background-color: #fff !important;	
 }
-
-
