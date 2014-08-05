@@ -57,15 +57,15 @@
         <p class="lead">Utilize o formulário abaixo para editar uma tarefa.</p>
     </div>
     <div class="row">
-        <form role="form" action="" method="post">
+        <form role="form" action="" method="post" id="editar">
           <div class="form-group">
             <label for="descricaoTarefa">Descrição da Tarefa</label>
-            <input type="text" name="descricao" class="form-control" value="<?php echo $dao->getDescricao(); ?>" id="descricaoTarefa" placeholder="Descrição da tarefa">
+            <input type="text" name="descricao" class="form-control validate[required]" value="<?php echo $dao->getDescricao(); ?>" id="descricaoTarefa" placeholder="Descrição da tarefa">
           </div>
           <div class="form-group">
             <label for="statusTarefa">Status da Tarefa</label>
-            <select name="status" class="form-control">
-              <option>Selecione um status...</option>
+            <select name="status" class="form-control validate[required]">
+              <option value>Selecione um status...</option>
               <option value="pendente" <?php echo ($dao->getStatus() == 'pendente') ? 'selected' : null ; ?>>Pendente</option>
               <option value="concluido" <?php echo ($dao->getStatus() == 'concluido') ? 'selected' : null ; ?>>Concluída</option>
             </select>
@@ -74,6 +74,11 @@
           <button type="submit" class="btn btn-success" name="enviar">Enviar</button>
         </form>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#editar").validationEngine();
+    });   
+    </script>
     <div class="footer">
         <p>&copy; Ilson Nóbrega - 2014</p>
     </div>

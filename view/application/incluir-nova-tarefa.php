@@ -47,15 +47,15 @@
         <p class="lead">Utilize o formulário abaixo para cadastrar uma nova tarefa.</p>
     </div>
     <div class="row">
-        <form role="form" action="" method="post">
+        <form role="form" action="" method="post" id="incluir" name="incluir">
           <div class="form-group">
             <label for="descricaoTarefa">Descrição da Tarefa</label>
-            <input type="text" name="descricao" class="form-control" id="descricaoTarefa" placeholder="Descrição da tarefa">
+            <input type="text" name="descricao" id="descricao" class="form-control validate[required]" id="descricaoTarefa" placeholder="Descrição da tarefa">
           </div>
           <div class="form-group">
             <label for="statusTarefa">Status da Tarefa</label>
-            <select name="status" class="form-control">
-              <option>Selecione um status...</option>
+            <select name="status" id="status" class="form-control validate[required]">
+              <option value>Selecione um status...</option>
               <option value="pendente">Pendente</option>
               <option value="concluido">Concluída</option>
             </select>
@@ -63,6 +63,11 @@
           <button type="submit" class="btn btn-success" name="enviar">Enviar</button>
         </form>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#incluir").validationEngine();
+    });   
+    </script>
     <div class="footer">
         <p>&copy; Ilson Nóbrega - 2014</p>
     </div>

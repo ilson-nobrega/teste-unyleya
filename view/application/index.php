@@ -39,12 +39,17 @@
   </div>
 </div>
 <div class="container">
-    <form class="form-signin" role="form" action="" method="post">
-        <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus>
-        <input type="password" name="senha" class="form-control" placeholder="Senha" required>
+    <form class="form-signin" role="form" action="" method="post" id="login" name="login">
+        <input type="email" name="email" class="form-control validate[required,custom[email]]" placeholder="E-mail" required autofocus>
+        <input type="password" name="senha" class="form-control validate[required]" placeholder="Senha" required>
         <button class="btn btn-lg btn-block btn-success" type="submit" name="enviar">Entrar</button>
     </form>
     <div class="footer">
         <p>&copy; Ilson Nóbrega - 2014</p>
     </div>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#login").validationEngine();
+       });   
+    </script>
 </div>
