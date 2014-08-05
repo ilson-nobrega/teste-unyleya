@@ -54,7 +54,7 @@
                     while ($resultado = $db->fetch(PDO::FETCH_ASSOC)){
           ?>
                         <tr>
-                          <td>#00<?php echo $resultado['id']; ?></td>
+                          <td>#<?php echo $resultado['id']; ?></td>
                           <td><?php echo $resultado['descricao']; ?></td>
                           <td><?php echo ($resultado['status'] == 'pendente') ? "<b style='color: red;'>Pendente</b>" : "<b style='color: green;'>Concluído</b>"; ?>
                           </td>

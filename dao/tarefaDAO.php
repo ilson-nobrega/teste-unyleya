@@ -94,6 +94,7 @@ class tarefaDAO{
             $db = daoFactory::getInstance()->prepare($sql);
             $db->bindValue(":descricao", $tarefa->getDescricao());
             $db->bindValue(":status", $tarefa->getStatus());
+            $db->bindValue(":id", $tarefa->getId());
             
             return $db->execute();
             
@@ -102,5 +103,37 @@ class tarefaDAO{
             echo $e->getMessage();
             
         }
+    }
+    
+    public function buscarTarefaPorId(tarefaModel $tarefa){
+        
+        try{
+            
+            $sql = 'SELECT id, descricao, status FROM tarefa
+                    WHERE id = :id';
+            
+            $db = daoFactory::getInstance()->prepare($sql);
+            $db->bindValue(":id", $tarefa->getId());
+            
+            $db->execute();
+
+            return $this->atribuiUsuario($db->fetch(PDO::FETCH_ASSOC));
+            
+        }catch (Exception $e){
+            
+            echo $e->getMessage();
+        }
+    }
+    
+    private function atribuiUsuario($row){
+        
+        $tarefa = new tarefaModel();
+        
+        $tarefa->setId($row['id']);
+        $tarefa->setDescricao($row['descricao']);
+        $tarefa->setStatus($row['status']);
+        
+        return $tarefa;
+        
     }
 }

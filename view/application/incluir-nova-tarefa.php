@@ -1,8 +1,23 @@
 <?php 
-    if(!isset($_SESSION['usuario'])){
         $utils = new Utils();
+    if(!isset($_SESSION['usuario'])){
         $utils->alert("Você deve efetuar login no sistema primeiro.");
         $utils->sendRedirect(PROJECT_URL.'/index/');
+    }
+    
+    if(isset($_POST['enviar'])){
+        
+        $descricao = $_POST['descricao'];
+        $status    = $_POST['status'];
+        
+        require 'controller/tarefaController.php';
+
+        $tarefaController = new tarefaController();
+        
+        $utils->alert("Tarefa cadastrada com sucesso!");
+        $tarefaController->incluirTarefa($descricao, $status);
+        $utils->sendRedirect(PROJECT_URL.'/listagem-de-tarefas/');
+        
     }
 ?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -41,11 +56,11 @@
             <label for="statusTarefa">Status da Tarefa</label>
             <select name="status" class="form-control">
               <option>Selecione um status...</option>
-              <option>A Fazer</option>
-              <option>Concluída</option>
+              <option value="pendente">Pendente</option>
+              <option value="concluido">Concluída</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-success">Enviar</button>
+          <button type="submit" class="btn btn-success" name="enviar">Enviar</button>
         </form>
     </div>
     <div class="footer">

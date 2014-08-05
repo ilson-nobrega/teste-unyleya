@@ -37,12 +37,22 @@ class tarefaController{
         
     }
     
+    public function buscaTarefaPeloId($id){
+        
+        $dao = new tarefaDAO();
+        $tarefa = new tarefaModel();
+        $tarefa->setId($id);
+        
+        return $dao->buscarTarefaPorId($tarefa);
+    }
+    
     public function editarTarefa($id, $descricao, $status){
         
         $dao = new tarefaDAO();
         $tarefa = new tarefaModel();
         $tarefa->setDescricao($descricao);
         $tarefa->setStatus($status);
+        $tarefa->setId($id);
         
         return $dao->editarTarefa($tarefa);
     }
