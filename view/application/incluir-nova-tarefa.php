@@ -14,14 +14,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="<?php echo PROJECT_URL; ?>">SIGET</a>
+      <a class="navbar-brand" href="<?php echo PROJECT_URL; ?>"><i class="fa fa-leaf fa-lg"></i> SIGET</a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo PROJECT_URL; ?>/bem-vindo/">Home</a></li>
-        <li><a href="<?php echo PROJECT_URL; ?>/listagem-de-tarefas/">Listagem de Tarefas</a></li>
-        <li class="active"><a href="<?php echo PROJECT_URL; ?>/incluir-nova-tarefa/">Incluir Nova Tarefa</a></li>
-        <li><a href="<?php echo PROJECT_URL; ?>/index/sair">Sair</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>/bem-vindo/"><i class="fa fa-home fa-lg"></i> Home</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>/listagem-de-tarefas/"><i class="fa fa-list-alt fa-lg"></i> Listagem de Tarefas</a></li>
+        <li class="active"><a href="<?php echo PROJECT_URL; ?>/incluir-nova-tarefa/"><i class="fa fa-plus fa-lg"></i> Incluir Nova Tarefa</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>/index/sair"><i class="fa fa-power-off fa-lg"></i> Sair</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
