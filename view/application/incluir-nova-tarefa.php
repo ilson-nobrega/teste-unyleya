@@ -21,7 +21,7 @@
 <section class="container">
     <div class="topo-bem-vindo jumbotron text-center">
         <h2>Bem vindo Ilson Nóbrega!</h2>
-        <p class="lead">Utilize o menu acima para navegar pelo sistema.</p>
+        <p class="lead">Utilize o formulário abaixo para cadastrar uma nova tarefa.</p>
     </div>
     <div class="row">
         <form role="form" action="" method="post">

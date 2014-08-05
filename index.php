@@ -3,7 +3,17 @@
     require 'includes.php';
     $includes = new importaIncludes();
     
-    $dao = new daoFactory();
+//     $dao = new daoFactory();
+
+    require 'dao/usuarioDAO.php';
+    $dao = new usuarioDao();
+    
+    
+    if($dao->connect() == true){
+        echo 'Deu certo!';
+    }else{
+        var_dump($dao);
+    }
     
     //Chama um novo objeto Utils
     $utils = new Utils();
