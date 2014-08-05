@@ -59,7 +59,7 @@
                           <td><?php echo ($resultado['status'] == 'pendente') ? "<b style='color: red;'>Pendente</b>" : "<b style='color: green;'>Concluído</b>"; ?>
                           </td>
                           <td>
-                            <a href="<?php echo PROJECT_URL; ?>/excluir-tarefa/<?php echo $resultado['id'];?>"><i class="fa fa-trash-o fa-lg"></i> Excluir</a>
+                            <a style="cursor: pointer;" onclick="confirmaExclusao(<?php echo $resultado['id'];?>)"><i class="fa fa-trash-o fa-lg"></i> Excluir</a>
                             |
                             <a href="<?php echo PROJECT_URL; ?>/editar-tarefa/<?php echo $resultado['id'];?>"><i class="fa fa-edit fa-lg"></i> Editar</a>
                           </td>
@@ -80,3 +80,14 @@
         <p>&copy; Ilson Nóbrega - 2014</p>
     </div>
 </section>
+<script type="text/javascript">
+     function confirmaExclusao(id){
+
+   	    var confirmacao = confirm('Você deseja realmente excluir essa tarefa?');
+
+   	    if(confirmacao === true){
+
+    	     location.href = '<?php echo PROJECT_URL; ?>/excluir-tarefa/'+id;
+   	   	}
+     }
+</script>

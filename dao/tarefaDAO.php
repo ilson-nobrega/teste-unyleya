@@ -11,7 +11,6 @@ class tarefaDAO{
     
     public static $instance;
     
-    
     public static function getInstance(){
     
         if(!isset(self::$instance)){
@@ -47,7 +46,7 @@ class tarefaDAO{
         
         try{
             
-            $sql = 'DELETE FROM tarefa WHERE id :id';
+            $sql = 'DELETE FROM tarefa WHERE id = :id';
             
             $db = daoFactory::getInstance()->prepare($sql);
             $db->bindValue(":id", $tarefa->getId());
@@ -58,5 +57,50 @@ class tarefaDAO{
             
             echo $e->getMessage();
         } 
+    }
+    
+    public function inserirTarefa(tarefaModel $tarefa){
+        
+        try{
+            
+            $sql = 'INSERT INTO tarefa (
+                        descricao,
+                        status)
+                    VALUES (
+                        :descricao,
+                        :status)';
+            
+            $db = daoFactory::getInstance()->prepare($sql);
+            $db->bindValue(":descricao", $tarefa->getDescricao());
+            $db->bindValue(":status", $tarefa->getStatus());
+            
+            return $db->execute();
+            
+        }catch (Exception $e){
+            
+            echo $e->getMessage();
+        }
+    }
+    
+    public function editarTarefa(tarefaModel $tarefa){
+        
+        try{
+            
+            $sql = 'UPDATE tarefa SET
+                        descricao = :descricao,
+                        status    = :status
+                    WHERE id = :id';
+            
+            $db = daoFactory::getInstance()->prepare($sql);
+            $db->bindValue(":descricao", $tarefa->getDescricao());
+            $db->bindValue(":status", $tarefa->getStatus());
+            
+            return $db->execute();
+            
+        }catch (Exception $e){
+            
+            echo $e->getMessage();
+            
+        }
     }
 }

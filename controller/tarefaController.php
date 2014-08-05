@@ -13,4 +13,15 @@ class tarefaController{
         
         return $dao->buscarTarefas();
     }
+    
+    
+    public function deletaTarefa($id){
+        
+        $dao = new tarefaDAO();
+        $tarefa = new tarefaModel();
+        $tarefa->setId($id);
+        
+        return $dao->deletarTarefa($tarefa);
+        
+    }
 }
