@@ -17,7 +17,7 @@ class usuarioController{
         
         if($dao->logarUsuario($usuario) != false){
             
-            return true;
+            return $dao->logarUsuario($usuario);
         }
         
     }

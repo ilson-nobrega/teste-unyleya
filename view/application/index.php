@@ -7,9 +7,14 @@
         require 'controller/usuarioController.php';
         
         $controller = new usuarioController();
-        if($controller->logaUsuario($email, $senha) == true){
+        $db = $controller->logaUsuario($email, $senha);
+        if($db == true){
+            
+            session_start();
+            $_SESSION['usuario']['email'] = $email;
             
             echo '<script>location.href="'.PROJECT_URL.'/bem-vindo/";</script>';
+        
         }else{
             
             echo '<script>alert("Erro ao autenticar usuário!");</script>';
