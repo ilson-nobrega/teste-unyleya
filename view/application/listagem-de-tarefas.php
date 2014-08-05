@@ -33,6 +33,13 @@
     </div>
     <div class="row">
         <div class="table-responsive">
+            <?php 
+                require 'controller/tarefaController.php';
+                $tarefaController = new tarefaController();
+                $db = $tarefaController->listarTarefasCadastradas();
+                
+                if($db != false){
+            ?>
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -44,12 +51,8 @@
               </thead>
               <tbody>
               <?php 
-                    require 'controller/tarefaController.php';
-                    $tarefaController = new tarefaController();
-                    $db = $tarefaController->listarTarefasCadastradas();
-                    
                     while ($resultado = $db->fetch(PDO::FETCH_ASSOC)){
-              ?>
+          ?>
                         <tr>
                           <td>#00<?php echo $resultado['id']; ?></td>
                           <td><?php echo $resultado['descricao']; ?></td>
@@ -61,9 +64,14 @@
                             <a href="<?php echo PROJECT_URL; ?>/editar-tarefa/<?php echo $resultado['id'];?>"><i class="fa fa-edit fa-lg"></i> Editar</a>
                           </td>
                         </tr>
-               <?php
+           <?php
                     }
-               ?>
+                 }else{
+           ?>
+           <?php
+                    echo 'Nenhum dado cadastrado, favor incluir uma nova tarefa.';       
+                 }
+           ?>
                </tbody>
             </table>
            </div>

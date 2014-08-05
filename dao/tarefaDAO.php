@@ -32,14 +32,31 @@ class tarefaDAO{
             
             $lista = daoFactory::getInstance()->query($sql);
             
-//             $lista = $db->fetch(PDO::FETCH_ASSOC);
-            
         }catch (Exception $e){
             
             echo $e->getMessage();
             
+            return false;
         }
         
         return $lista;
+    }
+    
+    
+    public function deletarTarefa(tarefaModel $tarefa){
+        
+        try{
+            
+            $sql = 'DELETE FROM tarefa WHERE id :id';
+            
+            $db = daoFactory::getInstance()->prepare($sql);
+            $db->bindValue(":id", $tarefa->getId());
+            
+            return $db->execute();
+            
+        }catch (Exception $e){
+            
+            echo $e->getMessage();
+        } 
     }
 }
