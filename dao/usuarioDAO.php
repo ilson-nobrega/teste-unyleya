@@ -26,7 +26,7 @@ class usuarioDao{
         
         try{
             
-            $sql = 'SELECT nome, email, senha FROM usuario WHERE email = :email, senha = :senha';
+            $sql = 'SELECT nome, email, senha FROM usuario WHERE email = :email AND senha = :senha';
             $db = daoFactory::getInstance()->prepare($sql);
             
             $db->bindValue(":email", $usuario->getEmail());
@@ -37,6 +37,8 @@ class usuarioDao{
         }catch (Exception $e){
             
             echo $e->getMessage();
+            
+            return false;
         }
         
     }
