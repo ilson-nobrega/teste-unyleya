@@ -24,4 +24,26 @@ class tarefaController{
         return $dao->deletarTarefa($tarefa);
         
     }
+    
+    public function incluirTarefa($descricao, $status){
+        
+        $dao = new tarefaDAO();
+        $tarefa = new tarefaModel();
+        
+        $tarefa->setDescricao($descricao);
+        $tarefa->setStatus($status);
+        
+        return $dao->inserirTarefa($tarefa);
+        
+    }
+    
+    public function editarTarefa($id, $descricao, $status){
+        
+        $dao = new tarefaDAO();
+        $tarefa = new tarefaModel();
+        $tarefa->setDescricao($descricao);
+        $tarefa->setStatus($status);
+        
+        return $dao->editarTarefa($tarefa);
+    }
 }
