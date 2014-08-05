@@ -1,7 +1,8 @@
 <?php 
+    $utils = new Utils();
+    
     if(isset($_POST['enviar'])){
 
-        $utils = new Utils();
         
         $email = $_POST['email'];
         $senha = $_POST['senha'];

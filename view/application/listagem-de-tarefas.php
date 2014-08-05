@@ -28,7 +28,7 @@
 </nav>
 <section class="container">
     <div class="topo-bem-vindo jumbotron text-center">
-        <h2>Bem vindo Ilson Nóbrega!</h2>
+        <h2>Bem vindo <?php echo $_SESSION['usuario']['nome']; ?>!</h2>
         <p class="lead">Na tabela abaixo, estão listadas todas as tarefas cadastradas e seu respectivo status.</p>
     </div>
     <div class="row">
