@@ -31,8 +31,9 @@ class usuarioDao{
             
             $db->bindValue(":email", $usuario->getEmail());
             $db->bindValue(":senha", $usuario->getSenha());
+            $db->execute();
             
-            return $db->execute();
+            return $db->fetch(PDO::FETCH_ASSOC);
             
         }catch (Exception $e){
             

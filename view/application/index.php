@@ -8,10 +8,10 @@
         
         $controller = new usuarioController();
         $db = $controller->logaUsuario($email, $senha);
-        if($db == true){
+        if($db != false){
             
-            session_start();
-            $_SESSION['usuario']['email'] = $email;
+            $_SESSION['usuario']['nome'] = $db['nome'];
+            $_SESSION['usuario']['email'] = $db['email'];
             
             echo '<script>location.href="'.PROJECT_URL.'/bem-vindo/";</script>';
         

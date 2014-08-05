@@ -15,10 +15,7 @@ class usuarioController{
         $usuario->setEmail($email);
         $usuario->setSenha($senha);
         
-        if($dao->logarUsuario($usuario) != false){
-            
-            return $dao->logarUsuario($usuario);
-        }
+        return $dao->logarUsuario($usuario);
         
     }
     
