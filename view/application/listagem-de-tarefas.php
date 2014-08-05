@@ -1,3 +1,9 @@
+<?php 
+    if(!isset($_SESSION['usuario'])){
+        echo '<script>alert("Você deve efetuar login no sistema primeiro.");</script>';
+        echo '<script>location.href="'.PROJECT_URL.'/index/";</script>';
+    }
+?>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -14,6 +20,7 @@
         <li><a href="<?php echo PROJECT_URL; ?>/bem-vindo/">Home</a></li>
         <li class="active"><a href="<?php echo PROJECT_URL; ?>/listagem-de-tarefas/">Listagem de Tarefas</a></li>
         <li><a href="<?php echo PROJECT_URL; ?>/incluir-nova-tarefa/">Incluir Nova Tarefa</a></li>
+        <li><a href="<?php echo PROJECT_URL; ?>/index/sair">Sair</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

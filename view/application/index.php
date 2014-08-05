@@ -20,6 +20,13 @@
             echo '<script>alert("Erro ao autenticar usuário!");</script>';
         }
     }
+    
+    if(isset($_GET['id']) && $_GET['id'] == 'sair'){
+        
+        unset($_SESSION['usuario']);
+        session_destroy();
+        echo '<script>location.href="'.PROJECT_URL.'/index/";</script>';
+    }
 ?>
 <div class="jumbotron topo">
   <div class="container">
